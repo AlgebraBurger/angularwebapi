@@ -14,5 +14,20 @@ namespace AngularJs.Controllers
 
             return View();
         }
+
+        public JsonResult Todo()
+        {
+            var todoList = new List<Todo>
+            {
+                new Todo { action="Go Biking" , done= true },
+                new Todo { action="Go Swimming" , done= true },
+                new Todo { action="Go Eating" , done= true },
+                new Todo { action="Go Cooking" , done= true },
+
+            };
+            return Json(todoList,JsonRequestBehavior.AllowGet);
+
+            
+        }
     }
 }
